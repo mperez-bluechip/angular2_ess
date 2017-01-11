@@ -16,7 +16,7 @@
 *.gz
 *.iso
 *.jar
-*.rar 
+*.rar
 *.tar
 *.zip
 
@@ -41,3 +41,4 @@ Thumbs.db
 ######################
 angular2-essential-training/
 angular_two_ess/
+node_modules/
