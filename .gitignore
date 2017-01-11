@@ -16,7 +16,7 @@
 *.gz
 *.iso
 *.jar
-*.rar
+*.rar 
 *.tar
 *.zip
 
@@ -40,3 +40,4 @@ Thumbs.db
 # folders #
 ######################
 angular2-essential-training/
+angular_two_ess/
