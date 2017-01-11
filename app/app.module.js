@@ -32,7 +32,7 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
                         imports: [
                             platform_browser_1.BrowserModule
                         ],
-                        declaration: [
+                        declarations: [
                             app_component_1.AppComponent
                         ],
                         bootstrap: [
