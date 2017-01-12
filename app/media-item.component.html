@@ -1,10 +1,10 @@
 <h2>{{ mediaItem.name }}</h2>
 <template [ngIf]="mediaItem.watchedOn">
-  <div>Watched on {{ mediaItem.watchedOn }}</div>
+  <div>Watched on {{ mediaItem.watchedOn | date: 'shortDate' }}</div>
 </template>
 <div>{{ mediaItem.category }}</div>
 <div>{{ mediaItem.year }}</div>
-<div class="tools">  
+<div class="tools">
   <svg
     [mwFavorite]="mediaItem.isFavorite"
     class="favorite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
