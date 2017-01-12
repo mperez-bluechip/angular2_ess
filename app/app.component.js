@@ -26,10 +26,12 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         medium: "Series",
                         category: "Science Fiction",
                         year: 2010,
-                        watchedOn: 1294166565384,
+                        watchedOn: null,
                         isFavorite: false
                     };
                 }
+                AppComponent.prototype.onMediaItemDelete = function (mediaItem) {
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'mw-app',
