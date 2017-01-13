@@ -15,7 +15,10 @@ export class FavoriteDirective {
   @HostListener('mouseleave') onMouseLeave() {
     this.hovering = false;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 166ab97... Mods to fave file ts and media item working with pipes
   @Input() set mwFavorite(value) {
     this.isFavorite = value;
   }
