@@ -1,38 +1,18 @@
 :host {
   display: flex;
-  min-height: 90vh;
-  flex-direction: column;
-  padding: 10px;
-}
-header {
-  color: #c6c5c3;
-}
-header.medium-movies {
-  color: #53ace4;
-}
-header.medium-series {
-  color: #45bf94;
-}
-header > h2 {
-  font-size: 1.4em;
-}
-header > h2.error {
-  color: #d93a3e;
+  font-family: Arial, Helvetica, sans-serif;
 }
 section {
-  flex: 1;
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
+  width: 100%;
+  background-color: #32435b;
 }
-section > media-item {
-  margin: 10px;
+section > header {
+  color: #ffffff;
+  padding: 10px;
 }
-footer {
-  text-align: right;
+section > header > h1 {
+  font-size: 2em;
 }
-footer .icon {
-  width: 64px;
-  height: 64px;
-  margin: 15px;
+section > header .description {
+  font-style: italic;
 }
