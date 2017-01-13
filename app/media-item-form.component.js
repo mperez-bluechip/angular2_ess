@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/forms'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/forms', './media-item.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, forms_1;
+    var core_1, forms_1, media_item_service_1;
     var MediaItemFormComponent;
     return {
         setters:[
@@ -19,11 +19,15 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
             },
             function (forms_1_1) {
                 forms_1 = forms_1_1;
+            },
+            function (media_item_service_1_1) {
+                media_item_service_1 = media_item_service_1_1;
             }],
         execute: function() {
             MediaItemFormComponent = (function () {
-                function MediaItemFormComponent(formBuilder) {
+                function MediaItemFormComponent(formBuilder, mediaItemService) {
                     this.formBuilder = formBuilder;
+                    this.mediaItemService = mediaItemService;
                 }
                 MediaItemFormComponent.prototype.ngOnInit = function () {
                     this.form = this.formBuilder.group({
@@ -33,7 +37,7 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
                             forms_1.Validators.pattern('[\\w\\-\\s\\/]+')
                         ])),
                         category: this.formBuilder.control(''),
-                        year: this.formBuilder.control('', this.yearValidator)
+                        year: this.formBuilder.control('', this.yearValidator),
                     });
                 };
                 MediaItemFormComponent.prototype.yearValidator = function (control) {
@@ -41,20 +45,22 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
                         return null;
                     }
                     var year = parseInt(control.value);
-                    var minYear = 1900;
-                    var maxYear = 2100;
+                    var minYear = 1800;
+                    var maxYear = 2500;
                     if (year >= minYear && year <= maxYear) {
                         return null;
                     }
                     else {
-                        return { 'year': {
+                        return {
+                            'year': {
                                 min: minYear,
                                 max: maxYear
-                            } };
+                            }
+                        };
                     }
                 };
                 MediaItemFormComponent.prototype.onSubmit = function (mediaItem) {
-                    console.log(mediaItem);
+                    this.mediaItemService.add(mediaItem);
                 };
                 MediaItemFormComponent = __decorate([
                     core_1.Component({
@@ -62,7 +68,7 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
                         templateUrl: 'app/media-item-form.component.html',
                         styleUrls: ['app/media-item-form.component.css']
                     }), 
-                    __metadata('design:paramtypes', [forms_1.FormBuilder])
+                    __metadata('design:paramtypes', [forms_1.FormBuilder, media_item_service_1.MediaItemService])
                 ], MediaItemFormComponent);
                 return MediaItemFormComponent;
             }());
