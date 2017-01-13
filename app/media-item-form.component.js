@@ -22,17 +22,18 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
             }],
         execute: function() {
             MediaItemFormComponent = (function () {
-                function MediaItemFormComponent() {
+                function MediaItemFormComponent(formBuilder) {
+                    this.formBuilder = formBuilder;
                 }
                 MediaItemFormComponent.prototype.ngOnInit = function () {
-                    this.form = new forms_1.FormGroup({
-                        medium: new forms_1.FormControl('Movies'),
-                        name: new forms_1.FormControl('', forms_1.Validators.compose([
+                    this.form = this.formBuilder.group({
+                        medium: this.formBuilder.control('Movies'),
+                        name: this.formBuilder.control('', forms_1.Validators.compose([
                             forms_1.Validators.required,
                             forms_1.Validators.pattern('[\\w\\-\\s\\/]+')
                         ])),
-                        category: new forms_1.FormControl(''),
-                        year: new forms_1.FormControl('', this.yearValidator)
+                        category: this.formBuilder.control(''),
+                        year: this.formBuilder.control('', this.yearValidator)
                     });
                 };
                 MediaItemFormComponent.prototype.yearValidator = function (control) {
@@ -61,7 +62,7 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
                         templateUrl: 'app/media-item-form.component.html',
                         styleUrls: ['app/media-item-form.component.css']
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [forms_1.FormBuilder])
                 ], MediaItemFormComponent);
                 return MediaItemFormComponent;
             }());
