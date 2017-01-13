@@ -46,7 +46,10 @@ System.register(['@angular/core', '@angular/forms'], function(exports_1, context
                         return null;
                     }
                     else {
-                        return { 'year': true };
+                        return { 'year': {
+                                min: minYear,
+                                max: maxYear
+                            } };
                     }
                 };
                 MediaItemFormComponent.prototype.onSubmit = function (mediaItem) {
