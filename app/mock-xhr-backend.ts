@@ -5,7 +5,7 @@ import { Observer } from 'rxjs/Observer';
 export class MockXHRBackend {
   constructor() {
   }
-
+ 
   createConnection(request: Request) {
     var response = new Observable((responseObserver: Observer<Response>) => {
       var responseData;
