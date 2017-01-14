@@ -1,12 +1,15 @@
-System.register([], function(exports_1, context_1) {
+System.register(['rxjs/add/operator/map'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var MediaItemService;
     return {
-        setters:[],
+        setters:[
+            function (_1) {}],
         execute: function() {
+            ;
             MediaItemService = (function () {
-                function MediaItemService() {
+                function MediaItemService(http) {
+                    this.http = http;
                     this.mediaItems = [
                         {
                             id: 1,
@@ -53,7 +56,10 @@ System.register([], function(exports_1, context_1) {
                     ];
                 }
                 MediaItemService.prototype.get = function () {
-                    return this.mediaItems;
+                    return this.http.get('mediaitems')
+                        .map(function (response) {
+                        return response.json().mediaItems;
+                    });
                 };
                 MediaItemService.prototype.add = function (mediaItem) {
                     this.mediaItems.push(mediaItem);
