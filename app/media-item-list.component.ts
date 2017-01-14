@@ -13,10 +13,7 @@ export class MediaItemListComponent {
   constructor(private mediaItemService: MediaItemService) {}
 
   ngOnInit() {
-    this.mediaItems = this.mediaItemService.get()
-    .subscribe(mediaItems => {
-      this.mediaItems = mediaItems;
-    });
+    this.mediaItems = this.mediaItemService.get();
   }
 
   onMediaItemDelete(mediaItem) {

@@ -26,11 +26,7 @@ System.register(['@angular/core', './media-item.service'], function(exports_1, c
                     this.mediaItemService = mediaItemService;
                 }
                 MediaItemListComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.mediaItems = this.mediaItemService.get()
-                        .subscribe(function (mediaItems) {
-                        _this.mediaItems = mediaItems;
-                    });
+                    this.mediaItems = this.mediaItemService.get();
                 };
                 MediaItemListComponent.prototype.onMediaItemDelete = function (mediaItem) {
                     this.mediaItemService.delete(mediaItem);
