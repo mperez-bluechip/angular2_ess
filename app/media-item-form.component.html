@@ -2,8 +2,8 @@
   <h2>Add Media to Watch</h2>
 </header>
 <form
-[formGroup]="form"
-(ngSubmit)="onSubmit(form.value)">
+  [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
   <ul>
     <li>
       <label for="medium">Medium</label>
@@ -14,7 +14,7 @@
     <li>
       <label for="name">Name</label>
       <input type="text" name="name" id="name" formControlName="name">
-      <div *ngIf="form.controls.name.errors?.pattern " class="error">
+      <div *ngIf="form.controls.name.errors?.pattern" class="error">
         Name has invalid characters
       </div>
     </li>
