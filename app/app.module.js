@@ -11,7 +11,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, platform_browser_1, forms_1, app_component_1, media_item_component_1, media_item_list_component_1, favorite_directive_1, category_list_pipe_1, media_item_form_component_1, media_item_service_1;
-    var AppModule;
+    var lookupLists, AppModule;
     return {
         setters:[
             function (core_1_1) {
@@ -45,6 +45,9 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                 media_item_service_1 = media_item_service_1_1;
             }],
         execute: function() {
+            lookupLists = {
+                mediums: ['Movies', 'Series']
+            };
             AppModule = (function () {
                 function AppModule() {
                 }
@@ -63,7 +66,8 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                             media_item_form_component_1.MediaItemFormComponent
                         ],
                         providers: [
-                            media_item_service_1.MediaItemService
+                            media_item_service_1.MediaItemService,
+                            { provide: 'lookupListToken', useValue: lookupLists }
                         ],
                         bootstrap: [
                             app_component_1.AppComponent
