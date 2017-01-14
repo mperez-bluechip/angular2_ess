@@ -36,4 +36,4 @@ import { MockXHRBackend } from './mock-xhr-backend';
     AppComponent
   ]
 })
-export class AppModule {}
+export class AppModule {} 
